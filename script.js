@@ -7,11 +7,24 @@ window.onload = function () {
   }
 };
 
+// function showAnswer(event) {
+
+//   let image = event.target;
+//   let name = image.id;
+//   name = name + ".jpg";
+//   image.src = "images/" + name;
+// }
 function showAnswer(event) {
   let image = event.target;
   let name = image.id;
   name = name + ".jpg";
   image.src = "images/" + name;
+  if (prompt("Введите название животного, Первые буквы: " + image.id.substring(0,1)) == image.id) {
+    alert("Верно!");
+  } else {
+    alert("Неверно!");
+    showBlur(image);
+  }
 }
 
 function showBlur(event) {
